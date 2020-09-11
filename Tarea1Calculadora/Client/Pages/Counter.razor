@@ -1,0 +1,37 @@
+﻿@page "/Calculadora"
+
+<h1>Calculadora</h1>
+
+<p>Digite el primer numero: <input type="number" @bind="PrimerNumero"> </p>
+
+<p>Digite el segundo numero: <input type="number" @bind="SegundoNumero"> </p>
+
+<p>La suma es: @Suma()</p>
+<p>La resta es: @Resta()</p>
+<p>La multiplicacion es: @Multiplicacion()</p>
+
+@code {
+    private int PrimerNumero;
+    private int SegundoNumero;
+    private int suma;
+    private float resta;
+    private int multiplicacion;
+
+    public int Suma()
+    {
+        suma = PrimerNumero + SegundoNumero;
+        return suma;
+    }
+
+    public float Resta()
+    {
+        resta = PrimerNumero - SegundoNumero;
+        return resta;
+    }
+
+    public int Multiplicacion()
+    {
+        multiplicacion = PrimerNumero * SegundoNumero;
+        return multiplicacion;
+    }
+}
